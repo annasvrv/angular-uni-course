@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-course-card',
+  selector: 'stb-course-card',
   imports: [],
   templateUrl: './course-card.component.html',
-  styleUrl: './course-card.component.scss'
+  styleUrl: './course-card.component.scss',
 })
 export class CourseCardComponent {
-
+  // @Input()
+  // title: string;
 }

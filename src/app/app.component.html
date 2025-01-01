@@ -6,8 +6,12 @@
     />
   </div>
 
+  <h1>{{ rxjsCourse.description }}</h1>
+
   <div class="courses">
-    <app-course-card></app-course-card>
+    <stb-course-card [title]="rxjsCourse.description"></stb-course-card>
+    <stb-course-card></stb-course-card>
+    <stb-course-card></stb-course-card>
   </div>
 </main>
 
