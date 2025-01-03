@@ -8,6 +8,86 @@
 
   <h1>{{ header }}</h1>
 
+  <div class="demo">
+    <!-- | date - pipe - default -->
+    <div>Start Date: {{ startDate | date }}</div>
+    <!-- custom -->
+    <div>Start Date: {{ startDate | date : "MM/dd/yy" }}</div>
+    <div>Start Date: {{ startDate | date : "dd-MMM-yyyy" }}</div>
+    <div>Start Date: {{ startDate | date : "MMMM yyyy" }}</div>
+
+    <hr
+      [ngStyle]="{
+        'margin-top': '50px',
+        height: '2px',
+        'background-color': 'green'
+      }"
+    />
+
+    <!-- Pipe for formating strings -->
+    <div [ngStyle]="{ 'margin-top': '50px' }">{{ title | uppercase }}</div>
+    <div [ngStyle]="{ 'margin-top': '10px' }">{{ title | lowercase }}</div>
+    <div [ngStyle]="{ 'margin-top': '10px' }">{{ title | titlecase }}</div>
+
+    <hr
+      [ngStyle]="{
+        'margin-top': '50px',
+        height: '2px',
+        'background-color': 'green'
+      }"
+    />
+
+    <!-- Pipe for numbers -->
+    <div [ngStyle]="{ 'margin-top': '50px' }">
+      {{ price | number }}
+    </div>
+    <!-- custom format -->
+    <div [ngStyle]="{ 'margin-top': '10px' }">
+      {{ price | number : "3.3-5" }}
+    </div>
+    <div [ngStyle]="{ 'margin-top': '10px' }">
+      {{ price | currency }}
+    </div>
+    <div [ngStyle]="{ 'margin-top': '10px' }">
+      {{ price | currency : "EUR" }}
+    </div>
+
+    <hr
+      [ngStyle]="{
+        'margin-top': '50px',
+        height: '2px',
+        'background-color': 'green'
+      }"
+    />
+
+    <div [ngStyle]="{ 'margin-top': '50px' }">
+      Percentage:
+      {{ rate | percent }}
+    </div>
+  </div>
+
+  <hr
+    [ngStyle]="{
+      'margin-top': '50px',
+      height: '2px',
+      'background-color': 'green'
+    }"
+  />
+
+  {{ courses | json }}
+
+  <hr
+    [ngStyle]="{
+      'margin-top': '50px',
+      height: '2px',
+      'background-color': 'green'
+    }"
+  />
+
+  <div *ngFor="let pair of course | keyvalue">
+    {{ pair.key + " ------------------" + "--------------- " + pair.value }}
+  </div>
+
   <div class="courses">
     <!-- <stb-course-card
       *ngFor="
@@ -28,7 +108,7 @@
     /> -->
     <stb-course-card
       *ngFor="
-        let course of courses;
+        let course of courses | slice : 1 : 4;
         let index = index;
         let isFirst = first;
         let isLast = last

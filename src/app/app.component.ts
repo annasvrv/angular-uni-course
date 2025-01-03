@@ -17,6 +17,12 @@ export class AppComponent {
   courses = [...COURSES];
   // courses = [];
 
+  title = COURSES[1].description;
+  price = 9.99396720867;
+  rate = 0.67;
+  course = COURSES[1];
+  startDate = new Date(2025, 0, 1);
+
   onCourseSelected(course: Course) {
     console.log('Card is clicked', course);
   }
