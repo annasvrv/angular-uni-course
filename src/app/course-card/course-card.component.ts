@@ -38,12 +38,6 @@ export class CourseCardComponent {
   @Output('courseSelected')
   courseEmitter = new EventEmitter<Course>();
 
-  // title: string = '';
-
-  // constructor() {}
-
-  // ngOnInit() {}
-
   onCourseViewed() {
     console.log('Card is clicked');
     this.courseEmitter.emit(this.course);

@@ -1,11 +1,15 @@
 <div class="course-card">
-  <!-- <div class="course-title">Angular Core Deep Dive</div> -->
   <div class="course-title">{{ index }} {{ course.description }}</div>
+
+  @if (course.id == 1) {
+  <h3>Course 1 is displayed</h3>
+  } @else if (course.iconUrl ) {
   <img width="300" alt="Angular Logo" [src]="course.iconUrl" />
+  } @else {
+  <h3>NO IMAGE AVAILABLE</h3>
+  }
 
   <div class="course-description">
-    <!-- A detailed walk-through of the most important part of Angular - the Core and
-    Common modules. -->
     {{ course.longDescription }}
   </div>
 

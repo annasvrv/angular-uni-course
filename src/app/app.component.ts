@@ -14,17 +14,16 @@ export class AppComponent {
   header = 'Angular Course';
 
   courses = [...COURSES];
+  // to check @empty objects
   // courses = [];
-
-  // coreCourse = COURSES[0];
-  // rxjsCourse = COURSES[1];
-  // ngrxCourse = COURSES[2];
 
   onCourseSelected(course: Course) {
     console.log('Card is clicked', course);
   }
 
   // Other option to track item in object; but preferably should use simplified -  track course.id
+
+  
   // if cant track by id, can use index track $index
 
   // trackCourse(index: number, course: Course) {
