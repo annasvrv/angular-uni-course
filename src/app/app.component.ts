@@ -13,12 +13,8 @@ import { Course } from './model/course';
 export class AppComponent {
   header = 'Angular Course';
 
-  courses = [...COURSES];
+  courses = COURSES;
   // courses = [];
-
-  // coreCourse = COURSES[0];
-  // rxjsCourse = COURSES[1];
-  // ngrxCourse = COURSES[2];
 
   onCourseSelected(course: Course) {
     console.log('Card is clicked', course);

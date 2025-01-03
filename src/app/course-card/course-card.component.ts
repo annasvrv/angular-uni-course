@@ -1,15 +1,7 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  Output,
-  EventEmitter,
-  input,
-} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { COURSES } from '../../db-data';
 import { Course } from '../model/course';
 import { count } from 'console';
-// import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'stb-course-card',
@@ -30,19 +22,10 @@ export class CourseCardComponent {
     lessonsCount: 0,
   };
 
-  @Input({
-    required: true,
-  })
-  index: number = 0;
+  @Input() cardIndex: number = 0;
 
   @Output('courseSelected')
   courseEmitter = new EventEmitter<Course>();
-
-  // title: string = '';
-
-  // constructor() {}
-
-  // ngOnInit() {}
 
   onCourseViewed() {
     console.log('Card is clicked');

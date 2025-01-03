@@ -9,46 +9,11 @@
   <h1>{{ header }}</h1>
 
   <div class="courses">
-    <!-- @for ( course of courses; track course.id; let count = $count; let even =
-    $even; let odd = $odd) {
-    <h2>Total amount of Courses: {{ count }}</h2>
-    <stb-course-card
-      [course]="course"
-      [index]="$index"
-      (courseSelected)="onCourseSelected($event)"
-      [class.is-first]="$first"
-      [class.is-last]="$last"
-      [class.is-even]="even"
-      [class.is-odd]="odd"
-    />
-    }  -->
-
-    <!-- // Other option to track item in object by function - track trackCourse; but preferably should use simplified -  track course.id -->
-    <!-- // if cant track by id, can use index track $index -->
-
-    @for ( course of courses; track course.id; let count = $count; let even =
-    $even; let odd = $odd) {
-    <stb-course-card
-      [course]="course"
-      [index]="$index"
-      (courseSelected)="onCourseSelected($event)"
-    />
-    } @empty {
-    <p>No courses found!</p>
-    }
-
-    <!-- <stb-course-card
-      (courseSelected)="onCourseSelected($event)"
-      [course]="coreCourse"
-    ></stb-course-card>
-    <stb-course-card
-      (courseSelected)="onCourseSelected($event)"
-      [course]="rxjsCourse"
-    ></stb-course-card>
-    <stb-course-card
-      (courseSelected)="onCourseSelected($event)"
-      [course]="ngrxCourse"
-    ></stb-course-card> -->
+    <stb-course-card *ngFor=" let course of courses; index as i; first as
+    isFirst; last as isLast; even as isEven; odd as isOdd "
+    (courseSelected)="onCourseSelected($event)" [course]="course" [cardIndex]="i
+    + 1" [class.is-first]="isFirst" [class.is-last]="isLast"
+    [class.is-even]="isEven [class.is-odd]="isOdd" />
   </div>
 </main>
 
