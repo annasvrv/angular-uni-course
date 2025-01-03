@@ -50,4 +50,13 @@ export class CourseCardComponent {
   cardClasses() {
     return this.course.category === 'BEGINNER' ? 'beginner' : '';
   }
+
+  cardStyles() {
+    return {
+      'background-image': 'url(' + this.course.iconUrl + ')',
+      'background-repeat': 'no-repeat',
+      'background-size': 'cover',
+      color: '#fff',
+    };
+  }
 }
