@@ -3,17 +3,18 @@ import { RouterOutlet } from '@angular/router';
 import { COURSES } from '../db-data';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { Course } from './model/course';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CourseCardComponent],
+  imports: [RouterOutlet, CourseCardComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   header = 'Angular Course';
 
-  courses = COURSES;
+  courses = [...COURSES];
   // courses = [];
 
   onCourseSelected(course: Course) {

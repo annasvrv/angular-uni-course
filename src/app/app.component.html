@@ -9,7 +9,7 @@
   <h1>{{ header }}</h1>
 
   <div class="courses">
-    <stb-course-card
+    <!-- <stb-course-card
       *ngFor="
         let course of courses;
         let index = index;
@@ -25,6 +25,19 @@
       [class.is-last]="isLast"
       [class.is-even]="isEven"
       [class.is-odd]="isOdd"
+    /> -->
+    <stb-course-card
+      *ngFor="
+        let course of courses;
+        let index = index;
+        let isFirst = first;
+        let isLast = last
+      "
+      (courseSelected)="onCourseSelected($event)"
+      [course]="course"
+      [cardIndex]="index + 1"
+      [class.is-first]="isFirst"
+      [class.is-last]="isLast"
     />
   </div>
 </main>
