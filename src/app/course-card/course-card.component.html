@@ -1,15 +1,15 @@
-<div
-  class="course-card"
-  *ngIf="course"
-  [ngClass]="cardClasses()"
-  [ngStyle]="cardStyles()"
->
-  <div
-    class="course-title"
-    [ngStyle]="{ 'text-decoration': 'underline', color: 'yellow' }"
-  >
+<div class="course-card" *ngIf="course" [ngClass]="cardClasses()">
+  <div class="course-title">
     {{ cardIndex || " " + " " + course.description }}
   </div>
+
+  <img
+    #courseImage
+    width="300"
+    [src]="course.iconUrl"
+    alt="Angular Logo"
+    *ngIf="isImageVisible(); else noImage"
+  />
 
   <ng-template #noImage>
     <p>No image is found</p>

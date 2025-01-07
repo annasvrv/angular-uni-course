@@ -8,10 +8,16 @@
 
   <h1>{{ header }}</h1>
 
-  <div class="courses">
+  <div class="courses" #container>
     <stb-course-card
+      #cardRef1
       (courseSelected)="onCourseSelected($event)"
       [course]="courses[0]"
+    />
+    <stb-course-card
+      #cardRef2
+      (courseSelected)="onCourseSelected($event)"
+      [course]="courses[1]"
     />
   </div>
 </main>
