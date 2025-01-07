@@ -8,15 +8,8 @@
     class="course-title"
     [ngStyle]="{ 'text-decoration': 'underline', color: 'yellow' }"
   >
-    {{ cardIndex + " " + course.description }}
+    {{ cardIndex || " " + " " + course.description }}
   </div>
-
-  <!-- <img
-    width="300"
-    alt="Angular Logo"
-    *ngIf="isImageVisible(); else noImage"
-    [src]="course.iconUrl"
-  /> -->
 
   <ng-template #noImage>
     <p>No image is found</p>
